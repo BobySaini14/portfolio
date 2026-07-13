@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Mail, User } from "lucide-react";
+import { ArrowRight, Download, Github, Mail } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg.asset.json";
 
 const ROLES = [
   "Full Stack Developer (MERN)",
@@ -107,9 +108,8 @@ export default function Hero() {
           <div className="relative">
             <div className="absolute -inset-6 rounded-full bg-gradient-brand opacity-30 blur-3xl" />
             <div className="absolute -inset-1 rounded-full bg-gradient-brand animate-gradient" style={{ backgroundSize: "300% 300%" }} />
-            <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-background bg-card grid place-items-center sm:h-80 sm:w-80 lg:h-96 lg:w-96">
-              <User className="h-24 w-24 text-muted-foreground/40" strokeWidth={1} />
-              <span className="absolute bottom-6 text-xs uppercase tracking-widest text-muted-foreground">Upload photo</span>
+            <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-background bg-card sm:h-80 sm:w-80 lg:h-96 lg:w-96">
+              <img src={profilePhoto.url} alt="Boby Saini" className="h-full w-full object-cover" />
             </div>
             {/* orbiting badges */}
             <FloatBadge className="-top-2 -left-4 bg-brand-blue/20 text-brand-blue">React</FloatBadge>
