@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Mail, User } from "lucide-react";
+import { ArrowRight, Download, Github, Mail } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg.asset.json";
 
 const ROLES = [
   "Full Stack Developer (MERN)",
