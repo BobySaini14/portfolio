@@ -90,6 +90,15 @@ export default function Hero() {
             >
               <Github className="h-5 w-5" />
             </a>
+            <a
+              href="https://www.linkedin.com/feed/"
+              target="_blank"
+              rel="noreferrer"
+              className="grid h-11 w-11 place-items-center rounded-full glass text-white transition-transform hover:scale-110"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
           </div>
 
           <div className="mt-12 grid grid-cols-3 gap-4 border-t border-white/5 pt-8 sm:max-w-md">
