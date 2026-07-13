@@ -2,6 +2,7 @@ import { useRef, useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Loader2, Check, AlertCircle } from "lucide-react";
+import { toast } from "sonner";
 import SectionHeader from "./SectionHeader";
 
 const EMAILJS_SERVICE_ID = "service_ak98l9l";
@@ -16,16 +17,25 @@ export default function Contact() {
     e.preventDefault();
     if (!formRef.current) return;
     setState("loading");
+    const toastId = toast.loading("Sending your message...");
     try {
       await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, {
         publicKey: EMAILJS_PUBLIC_KEY,
       });
       setState("sent");
       formRef.current.reset();
+      toast.success("Message sent!", {
+        id: toastId,
+        description: "Thanks for reaching out — I'll get back to you soon.",
+      });
       setTimeout(() => setState("idle"), 3000);
     } catch (err) {
       console.error("EmailJS error:", err);
       setState("error");
+      toast.error("Failed to send message", {
+        id: toastId,
+        description: "Please try again or email me directly at bobysaini369@gmail.com.",
+      });
       setTimeout(() => setState("idle"), 3000);
     }
   };
