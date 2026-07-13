@@ -2,6 +2,7 @@ import { useRef, useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Loader2, Check, AlertCircle } from "lucide-react";
+import { toast } from "sonner";
 import SectionHeader from "./SectionHeader";
 
 const EMAILJS_SERVICE_ID = "service_ak98l9l";
