@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Mail } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg.asset.json";
 
 const ROLES = [
@@ -89,6 +89,15 @@ export default function Hero() {
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/feed/"
+              target="_blank"
+              rel="noreferrer"
+              className="grid h-11 w-11 place-items-center rounded-full glass text-white transition-transform hover:scale-110"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
             </a>
           </div>
 

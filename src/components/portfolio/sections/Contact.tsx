@@ -41,7 +41,7 @@ export default function Contact() {
                 <a href="#" className="grid h-11 w-11 place-items-center rounded-xl glass text-white transition-transform hover:scale-110" aria-label="GitHub">
                   <Github className="h-5 w-5" />
                 </a>
-                <a href="#" className="grid h-11 w-11 place-items-center rounded-xl glass text-white transition-transform hover:scale-110" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center rounded-xl glass text-white transition-transform hover:scale-110" aria-label="LinkedIn">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </div>
