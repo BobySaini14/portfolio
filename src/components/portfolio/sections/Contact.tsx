@@ -1,18 +1,33 @@
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Loader2, Check } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { Mail, MapPin, Phone, Send, Github, Linkedin, Loader2, Check, AlertCircle } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 
-export default function Contact() {
-  const [state, setState] = useState<"idle" | "loading" | "sent">("idle");
+const EMAILJS_SERVICE_ID = "service_ak98l9l";
+const EMAILJS_TEMPLATE_ID = "template_bm5a6ia";
+const EMAILJS_PUBLIC_KEY = "9vFr1rj-AyhzhoWsteVon";
 
-  const onSubmit = (e: FormEvent) => {
+export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [state, setState] = useState<"idle" | "loading" | "sent" | "error">("idle");
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!formRef.current) return;
     setState("loading");
-    setTimeout(() => {
+    try {
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      });
       setState("sent");
-      setTimeout(() => setState("idle"), 2500);
-    }, 1200);
+      formRef.current.reset();
+      setTimeout(() => setState("idle"), 3000);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setState("error");
+      setTimeout(() => setState("idle"), 3000);
+    }
   };
 
   return (
@@ -49,6 +64,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.form
+            ref={formRef}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -66,6 +82,7 @@ export default function Contact() {
               <label className="mb-1.5 block text-xs uppercase tracking-widest text-muted-foreground">Message</label>
               <textarea
                 required
+                name="message"
                 rows={5}
                 placeholder="Tell me about your project..."
                 className="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-brand-blue/60 focus:bg-white/10"
@@ -73,12 +90,13 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              disabled={state !== "idle"}
+              disabled={state === "loading"}
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-80 sm:w-auto"
             >
               {state === "idle" && (<><Send className="h-4 w-4" /> Send Message</>)}
               {state === "loading" && (<><Loader2 className="h-4 w-4 animate-spin" /> Sending...</>)}
               {state === "sent" && (<><Check className="h-4 w-4" /> Message Sent!</>)}
+              {state === "error" && (<><AlertCircle className="h-4 w-4" /> Try Again</>)}
             </button>
           </motion.form>
         </div>
