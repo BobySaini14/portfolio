@@ -70,7 +70,10 @@ export default function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#"
+              href="https://docs.google.com/document/d/1S36b5P5SEjI9v1vsxUhkpmnLgex1kUTm/export?format=pdf"
+              target="_blank"
+              rel="noreferrer"
+              download="Boby-Saini-Resume.pdf"
               className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
             >
               <Download className="h-4 w-4" /> Resume
