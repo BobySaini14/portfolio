@@ -85,7 +85,7 @@ export default function Hero() {
               <Mail className="h-4 w-4" /> Contact
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/"
               target="_blank"
               rel="noreferrer"
               className="grid h-11 w-11 place-items-center rounded-full glass text-white transition-transform hover:scale-110"
