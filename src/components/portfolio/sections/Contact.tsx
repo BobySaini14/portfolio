@@ -63,7 +63,7 @@ export default function Contact() {
             <div className="mt-4 border-t border-white/5 pt-6">
               <p className="mb-3 text-xs uppercase tracking-widest text-muted-foreground">Follow</p>
               <div className="flex gap-3">
-                <a href="#" className="grid h-11 w-11 place-items-center rounded-xl glass text-white transition-transform hover:scale-110" aria-label="GitHub">
+                <a href="https://github.com/" target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center rounded-xl glass text-white transition-transform hover:scale-110" aria-label="GitHub">
                   <Github className="h-5 w-5" />
                 </a>
                 <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center rounded-xl glass text-white transition-transform hover:scale-110" aria-label="LinkedIn">
