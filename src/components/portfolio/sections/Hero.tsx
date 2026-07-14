@@ -146,7 +146,7 @@ export default function Hero() {
           </a>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.slice(0, 3).map((p, i) => (
+          {projects.slice(0, 3).map((p) => (
             <a
               key={p.title}
               href={p.links[0]?.href || "#projects"}
