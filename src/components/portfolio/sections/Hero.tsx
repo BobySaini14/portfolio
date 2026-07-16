@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
-import { projects } from "../data/projects";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg.asset.json";
 
 const ROLES = [
@@ -133,47 +132,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-        className="mx-auto mt-16 w-full max-w-7xl"
-      >
-        <div className="mb-5 flex items-center justify-between">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Featured Projects</h3>
-          <a href="#projects" className="inline-flex items-center gap-1 text-sm font-medium text-brand-blue hover:underline">
-            View all <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.slice(0, 3).map((p) => (
-            <a
-              key={p.title}
-              href={p.links[0]?.href || "#projects"}
-              className="group relative overflow-hidden rounded-2xl glass card-hover p-5"
-            >
-              <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${p.gradient}`} />
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{p.category}</span>
-                  <h4 className="mt-1 font-display text-lg font-bold text-white transition-colors group-hover:text-brand-blue">
-                    {p.title}
-                  </h4>
-                </div>
-                <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </div>
-              <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">{p.description}</p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {p.tech.slice(0, 4).map((t) => (
-                  <span key={t} className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </a>
-          ))}
-        </div>
-      </motion.div>
     </section>
   );
 }
