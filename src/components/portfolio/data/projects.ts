@@ -17,7 +17,7 @@ export const projects: Project[] = [
       "A scalable AI-powered DSA learning platform with curated problem sheets, real-time code execution, AI-powered guidance, optimized backend architecture, and PostgreSQL database management.",
     features: ["AI Assistant", "DSA Sheets", "Real-time Code Execution", "Authentication", "Modern Dashboard"],
     links: [
-      { label: "Live Demo", href: "#" },
+      { label: "Live Demo", href: "https://codecanvasai-dusky.vercel.app/" },
       { label: "GitHub", href: "#" },
       { label: "Case Study", href: "#" },
     ],

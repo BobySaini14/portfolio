@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg.asset.json";
 
 const ROLES = [
@@ -103,6 +103,24 @@ export default function Hero() {
               <Linkedin className="h-5 w-5" />
             </a>
           </div>
+
+          <a
+            href="https://codecanvasai-dusky.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="group mt-8 flex w-full max-w-md items-center justify-between rounded-2xl glass card-hover p-4 sm:p-5"
+          >
+            <div>
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-cyan">
+                Featured Project
+              </span>
+              <h3 className="mt-1 font-display text-lg font-bold text-white">CodeCanvas AI</h3>
+              <p className="mt-0.5 text-sm text-muted-foreground">AI-powered DSA learning platform</p>
+            </div>
+            <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-brand text-white shadow-glow transition-transform group-hover:scale-110">
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </a>
 
           <div className="mt-12 grid grid-cols-3 gap-4 border-t border-white/5 pt-8 sm:max-w-md">
             <Stat value={10} suffix="+" label="Projects" />
