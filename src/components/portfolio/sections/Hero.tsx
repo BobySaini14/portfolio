@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
-import { projects } from "../data/projects";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg.asset.json";
 
 const ROLES = [
