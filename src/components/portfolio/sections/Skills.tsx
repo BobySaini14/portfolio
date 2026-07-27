@@ -7,6 +7,8 @@ const groups: { title: string; color: string; skills: { name: string; level: num
     color: "from-brand-blue to-brand-cyan",
     skills: [
       { name: "JavaScript (ES6+)", level: 92 },
+      { name: "Typescript", level: 90 },
+      { name: "Python", level: 40 },
       { name: "HTML5", level: 95 },
       { name: "CSS3", level: 90 },
     ],
