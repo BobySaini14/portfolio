@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "A responsive food ordering application with restaurant search, category filtering, reusable React components, API integration, and Netlify deployment.",
     features: ["Search", "Filters", "Responsive UI", "API Integration", "React Hooks"],
     links: [
-      { label: "Live Demo", href: "#" },
+      { label: "Live Demo", href: "https://swiggyfoodwebsite.netlify.app/" },
       { label: "GitHub", href: "#" },
     ],
     gradient: "from-amber-400 via-rose-500 to-brand-purple",
