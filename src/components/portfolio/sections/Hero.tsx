@@ -124,8 +124,8 @@ export default function Hero() {
           </a>
 
           <div className="mt-12 grid grid-cols-3 gap-4 border-t border-white/5 pt-8 sm:max-w-md">
-            <Stat value={10} suffix="+" label="Projects" />
-            <Stat value={3} suffix="+" label="Years Coding" />
+            <Stat value={3} suffix="+" label="Projects" />
+            <Stat value={1} suffix="+" label="Years Coding" />
             <Stat value={20} suffix="+" label="Technologies" />
           </div>
         </motion.div>
