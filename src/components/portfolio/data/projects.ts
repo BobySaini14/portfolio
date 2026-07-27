@@ -37,7 +37,7 @@ export const projects: Project[] = [
     features: ["Search", "Filters", "Responsive UI", "API Integration", "React Hooks"],
     links: [
       { label: "Live Demo", href: "https://swiggyfoodwebsite.netlify.app/" },
-      { label: "GitHub", href: "#" },
+      { label: "GitHub", href: "https://github.com/BobySaini14/Swiggy-Project" },
     ],
     photo: swiggyPhoto,
     gradient: "from-amber-400 via-rose-500 to-brand-purple",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     tech: ["HTML", "CSS", "JavaScript", "GitHub REST API"],
     description:
       "A GitHub Profile Viewer that fetches real-time user information using the GitHub REST API with asynchronous JavaScript and responsive UI.",
-    links: [{ label: "GitHub", href: "#" }],
+    links: [{ label: "GitHub", href: "https://github.com/BobySaini14/Github-Profile-Fetch" }],
     gradient: "from-emerald-400 via-brand-cyan to-brand-blue",
   },
 ];
