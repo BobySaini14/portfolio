@@ -1,3 +1,6 @@
+import swiggyPhoto from "../../../assets/swiggyPhoto.jpeg";
+import codeCanvasPhoto from "../../../assets/codecanvasPhoto.jpeg";
+
 export type Project = {
   title: string;
   category: "Full Stack" | "Frontend" | "API";
@@ -6,6 +9,7 @@ export type Project = {
   features?: string[];
   links: { label: string; href: string }[];
   gradient: string;
+  photo?: string;
 };
 
 export const projects: Project[] = [
@@ -21,6 +25,7 @@ export const projects: Project[] = [
       { label: "GitHub", href: "#" },
       { label: "Case Study", href: "#" },
     ],
+    photo: codeCanvasPhoto,
     gradient: "from-brand-blue via-brand-purple to-brand-cyan",
   },
   {
@@ -34,6 +39,7 @@ export const projects: Project[] = [
       { label: "Live Demo", href: "https://swiggyfoodwebsite.netlify.app/" },
       { label: "GitHub", href: "#" },
     ],
+    photo: swiggyPhoto,
     gradient: "from-amber-400 via-rose-500 to-brand-purple",
   },
   {

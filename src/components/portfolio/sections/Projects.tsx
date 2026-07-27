@@ -55,12 +55,20 @@ export default function Projects() {
                 className="glass card-hover group flex flex-col overflow-hidden rounded-3xl"
               >
                 <div className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br ${p.gradient}`}>
-                  <div className="absolute inset-0 grid place-items-center text-white/70">
-                    <div className="flex flex-col items-center gap-2">
-                      <ImageIcon className="h-10 w-10" strokeWidth={1.3} />
-                      <span className="text-xs uppercase tracking-widest">Screenshot placeholder</span>
+                  {p.photo ? (
+                    <img
+                      src={p.photo}
+                      alt={`${p.title} project screenshot`}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 grid place-items-center text-white/70">
+                      <div className="flex flex-col items-center gap-2">
+                        <ImageIcon className="h-10 w-10" strokeWidth={1.3} />
+                        <span className="text-xs uppercase tracking-widest">Screenshot placeholder</span>
+                      </div>
                     </div>
-                  </div>
+                  )}
                   <span className="absolute left-4 top-4 rounded-full bg-black/40 px-3 py-1 text-xs font-semibold backdrop-blur">
                     {p.category}
                   </span>
